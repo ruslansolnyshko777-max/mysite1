@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=0.75">
@@ -23,28 +23,30 @@
     <h2 id="form">данные</h2>
     <form>
         <div>
-            <label>Имя:</label><br>
+            <label>Имя:</label>
             <input type="text" name="name">
         </div>
 
         <div>
-            <label>Почта:</label><br>
+            <label>Почта:</label>
             <input type="email" name="email">
         </div>
 
         <div>
-            <label>Телефон:</label><br>
+            <label>Телефон:</label>
             <input type="tel" name="phone">
         </div>
 
         <div>
-            <label>Пол:</label><br>
-            <input type="radio" name="gender" value="male"> Мужской
-            <input type="radio" name="gender" value="female"> Женский
+            <label>Пол:</label>
+            <div class="radio-group">
+                <input type="radio" name="gender" value="male"> Мужской
+                <input type="radio" name="gender" value="female"> Женский
+            </div>
         </div>
 
         <div>
-            <label>Страна:</label><br>
+            <label>Страна:</label>
             <select name="country">
                 <option value="ru">Россия</option>
                 <option value="en">США</option>
@@ -53,7 +55,7 @@
         </div>
 
         <div>
-            <label>Сообщение:</label><br>
+            <label>Сообщение:</label>
             <textarea name="message" rows="4" cols="50"></textarea>
         </div>
 
@@ -98,9 +100,4 @@
     <hr>
 
 </body>
-
 </html>
-
-
-
-
