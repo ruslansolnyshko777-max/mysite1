@@ -75,7 +75,7 @@ form {
 }
 
 form div {
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -84,7 +84,7 @@ form div {
 label {
     font-weight: 600;
     color: #ffffff;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     display: block;
     font-size: clamp(14px, 4vw, 16px);
 }
@@ -102,7 +102,7 @@ textarea {
     transition: border-color 0.3s ease;
     background-color: #2a2a2a;
     color: #ffffff;
-    font-size: 16px; /* Prevents zoom on iOS */
+    font-size: 16px;
 }
 
 input[type="text"]:focus,
