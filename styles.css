@@ -1,5 +1,4 @@
 /* styles.css */
-/* General styles */
 * {
     margin: 0;
     padding: 0;
@@ -9,29 +8,29 @@
 body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
-    color: #ffffff;
-    background-color: #000000;
+    color: #fff;
+    background: #000;
     padding: 20px;
     max-width: 100%;
     margin: 0 auto;
 }
 
-/* Headers */
-.h1 {
-    color: #ffffff;
-    text-align: center;
-    margin: 20px 0;
-    font-size: clamp(1.8em, 5vw, 2.5em);
+.h1, h2 {
+    color: #fff;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(255,255,255,0.1);
 }
 
+.h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: clamp(1.8em, 5vw, 2.5em);
+}
+
 h2 {
-    color: #ffffff;
-    margin: 25px 0 15px 0;
+    margin: 25px 0 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid #3498db;
-    font-weight: 600;
     font-size: clamp(1.3em, 4vw, 1.8em);
 }
 
@@ -53,11 +52,10 @@ div:first-of-type a {
 }
 
 div:first-of-type a:hover {
-    background-color: #3498db;
+    background: #3498db;
     color: white;
 }
 
-/* Horizontal lines */
 hr {
     border: none;
     height: 2px;
@@ -77,7 +75,6 @@ form {
 form div {
     margin-bottom: 15px;
     display: flex;
-    flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
@@ -85,11 +82,19 @@ form div {
 
 label {
     font-weight: 600;
-    color: #ffffff;
-    display: block;
-    font-size: clamp(14px, 4vw, 16px);
     min-width: 80px;
-    white-space: nowrap;
+    font-size: clamp(14px, 4vw, 16px);
+}
+
+input, select, textarea {
+    padding: 12px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s ease;
+    background: #2a2a2a;
+    color: #fff;
+    font-size: 16px;
 }
 
 input[type="text"],
@@ -99,37 +104,16 @@ select,
 textarea {
     flex: 1;
     min-width: 200px;
-    padding: 12px;
-    border: 2px solid #555555;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-    transition: border-color 0.3s ease;
-    background-color: #2a2a2a;
-    color: #ffffff;
-    font-size: 16px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-select:focus,
-textarea:focus {
+input:focus, select:focus, textarea:focus {
     outline: none;
     border-color: #3498db;
 }
 
-/* Radio button styles */
+/* Radio buttons */
 form div:has(input[type="radio"]) {
-    flex-direction: row;
-    align-items: center;
     gap: 15px;
-    flex-wrap: wrap;
-}
-
-form div:has(input[type="radio"]) label {
-    margin-bottom: 0;
-    margin-right: 5px;
-    font-size: clamp(14px, 4vw, 16px);
 }
 
 .radio-group {
@@ -139,18 +123,16 @@ form div:has(input[type="radio"]) label {
 }
 
 input[type="radio"] {
-    margin-right: 5px;
     transform: scale(1.2);
 }
 
 input[type="submit"] {
-    background-color: #3498db;
+    background: #3498db;
     color: white;
     padding: 14px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     transition: background-color 0.3s ease;
     margin-top: 10px;
@@ -159,7 +141,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #2980b9;
+    background: #2980b9;
 }
 
 /* Table */
@@ -176,21 +158,20 @@ table {
 th, td {
     padding: 12px 8px;
     text-align: left;
-    border: 1px solid #555555;
+    border: 1px solid #555;
 }
 
 th {
-    background-color: #2c3e50;
-    color: white;
+    background: #2c3e50;
     font-weight: 600;
 }
 
 tr:nth-child(even) {
-    background-color: #2a2a2a;
+    background: #2a2a2a;
 }
 
 tr:hover {
-    background-color: #34495e;
+    background: #34495e;
 }
 
 /* Image */
@@ -208,22 +189,15 @@ img:hover {
     transform: scale(1.02);
 }
 
-/* Textarea styles */
 textarea {
     resize: vertical;
     min-height: 120px;
-    font-family: 'Montserrat', sans-serif;
 }
 
-/* Mobile first responsive design */
+/* Responsive */
 @media (max-width: 480px) {
-    body {
-        padding: 15px 10px;
-    }
-    
-    form {
-        padding: 15px;
-    }
+    body { padding: 15px 10px; }
+    form { padding: 15px; }
     
     form div {
         flex-direction: column;
@@ -233,13 +207,7 @@ textarea {
     
     form div:has(input[type="radio"]) {
         flex-direction: row;
-        align-items: center;
         gap: 10px;
-    }
-    
-    label {
-        min-width: auto;
-        margin-bottom: 0;
     }
     
     input[type="text"],
@@ -248,33 +216,15 @@ textarea {
     select,
     textarea {
         min-width: 100%;
-        width: 100%;
     }
     
-    table {
-        font-size: 14px;
-    }
-    
-    th, td {
-        padding: 10px 6px;
-    }
-    
-    input[type="submit"] {
-        padding: 16px 20px;
-    }
+    table { font-size: 14px; }
+    th, td { padding: 10px 6px; }
+    input[type="submit"] { padding: 16px 20px; }
 }
 
-/* For very small screens */
 @media (max-width: 320px) {
-    body {
-        padding: 10px 5px;
-    }
-    
-    .h1 {
-        font-size: 1.5em;
-    }
-    
-    h2 {
-        font-size: 1.2em;
-    }
+    body { padding: 10px 5px; }
+    .h1 { font-size: 1.5em; }
+    h2 { font-size: 1.2em; }
 }
