@@ -32,6 +32,7 @@ h2 {
     padding-bottom: 10px;
     border-bottom: 2px solid #3498db;
     font-size: clamp(1.3em, 4vw, 1.8em);
+    text-align: center; /* Центрирование заголовков */
 }
 
 /* Navigation */
@@ -70,6 +71,9 @@ form {
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(255,255,255,0.1);
     margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 form div {
@@ -77,13 +81,14 @@ form div {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
 label {
     font-weight: 600;
-    min-width: 80px;
+    min-width: 100px; /* Фиксированная ширина для выравнивания */
     font-size: clamp(14px, 4vw, 16px);
+    text-align: right; /* Выравнивание текста меток по правому краю */
 }
 
 input, select, textarea {
@@ -116,11 +121,21 @@ input:focus, select:focus, textarea:focus {
     display: flex;
     gap: 15px;
     align-items: center;
+    flex: 1; /* Занимает доступное пространство */
 }
 
 .radio-group input[type="radio"] {
     margin-right: 5px;
     transform: scale(1.2);
+}
+
+/* Специальный стиль для div с радиокнопками */
+form div:has(.radio-group) {
+    align-items: flex-start;
+}
+
+form div:has(.radio-group) label {
+    margin-top: 5px; /* Выравнивание с первой строкой радиокнопок */
 }
 
 input[type="submit"] {
@@ -150,6 +165,8 @@ table {
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(255,255,255,0.1);
     font-size: clamp(12px, 3vw, 16px);
+    max-width: 600px;
+    margin: 0 auto; /* Центрирование таблицы */
 }
 
 th, td {
@@ -202,9 +219,16 @@ textarea {
         gap: 5px;
     }
     
+    label {
+        text-align: left; /* На мобильных выравнивание по левому краю */
+        min-width: auto;
+        margin-bottom: 5px;
+    }
+    
     .radio-group {
         flex-direction: row;
         gap: 10px;
+        width: 100%;
     }
     
     input[type="text"],
@@ -215,7 +239,11 @@ textarea {
         min-width: 100%;
     }
     
-    table { font-size: 14px; }
+    table { 
+        font-size: 14px;
+        max-width: 100%;
+    }
+    
     th, td { padding: 10px 6px; }
     input[type="submit"] { padding: 16px 20px; }
 }
