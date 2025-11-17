@@ -112,17 +112,14 @@ input:focus, select:focus, textarea:focus {
 }
 
 /* Radio buttons */
-form div:has(input[type="radio"]) {
-    gap: 15px;
-}
-
 .radio-group {
     display: flex;
+    gap: 15px;
     align-items: center;
-    gap: 8px;
 }
 
-input[type="radio"] {
+.radio-group input[type="radio"] {
+    margin-right: 5px;
     transform: scale(1.2);
 }
 
@@ -205,7 +202,7 @@ textarea {
         gap: 5px;
     }
     
-    form div:has(input[type="radio"]) {
+    .radio-group {
         flex-direction: row;
         gap: 10px;
     }
