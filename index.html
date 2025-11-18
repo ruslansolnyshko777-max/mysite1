@@ -21,15 +21,150 @@
 
     
     <h2 id="form">данные</h2>
-    <!-- ВСТАВЬ СЮДА ТВОЙ IFRAME КОД -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf0ZU_FOSDDoPpPtQqnd3kM2z2mQH0dnChRcVWe7FtZlUQ9Xw/viewform?embedded=true" 
-            width="100%" 
-            height="1212" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0">
-        Загрузка…
-    </iframe>
+    <form method="POST" action="save_data.php">
+        <div>
+            <label>Имя:</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div>
+            <label>Почта:</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div>
+            <label>Телефон:</label>
+            <input type="tel" name="phone" required>
+        </div>
+
+        <div>
+            <label>Пол:</label>
+            <div class="radio-group">
+                <input type="radio" name="gender" value="male" required> Мужской
+                <input type="radio" name="gender" value="female" required> Женский
+            </div>
+        </div>
+
+        <div>
+            <label>Страна:</label>
+            <select name="country" required>
+                <option value="ru">Россия</option>
+                <option value="en">США</option>
+                <option value="by">Беларусь</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Сообщение:</label>
+            <textarea name="message" rows="4" cols="50"></textarea>
+        </div>
+
+        <div>
+            <input type="submit" value="Отправить">
+        </div>
+    </form>
+
+    <hr>
+
+    <h2 id="table">таблица</h2>
+    <table border="1">
+        <tr>
+            <th>x</th>
+            <th>x*x</th>
+            <th>x*x+x</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>9</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>25</td>
+            <td>30</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2 id="photo">фото</h2>
+    <div>
+        <img src="cat.jpg" alt="" width="400" height="300">
+    </div>
+
+    <hr>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <title>#сайт руса</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="h1">#我是个程序员。</h1>
+
+    <div>
+        <a href="#form">форма</a> |
+        <a href="#table">таблица</a> |
+        <a href="#photo">фото</a>
+    </div>
+
+    <hr>
+
+    
+    <h2 id="form">данные</h2>
+    <form method="POST" action="save_data.php">
+        <div>
+            <label>Имя:</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <div>
+            <label>Почта:</label>
+            <input type="email" name="email" required>
+        </div>
+
+        <div>
+            <label>Телефон:</label>
+            <input type="tel" name="phone" required>
+        </div>
+
+        <div>
+            <label>Пол:</label>
+            <div class="radio-group">
+                <input type="radio" name="gender" value="male" required> Мужской
+                <input type="radio" name="gender" value="female" required> Женский
+            </div>
+        </div>
+
+        <div>
+            <label>Страна:</label>
+            <select name="country" required>
+                <option value="ru">Россия</option>
+                <option value="en">США</option>
+                <option value="by">Беларусь</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Сообщение:</label>
+            <textarea name="message" rows="4" cols="50"></textarea>
+        </div>
+
+        <div>
+            <input type="submit" value="Отправить">
+        </div>
+    </form>
 
     <hr>
 
