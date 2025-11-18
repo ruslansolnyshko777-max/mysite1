@@ -21,33 +21,33 @@
 
     
     <h2 id="form">данные</h2>
-    <form>
+    <form method="POST" action="save_data.php">
         <div>
             <label>Имя:</label>
-            <input type="text" name="name">
+            <input type="text" name="name" required>
         </div>
 
         <div>
             <label>Почта:</label>
-            <input type="email" name="email">
+            <input type="email" name="email" required>
         </div>
 
         <div>
             <label>Телефон:</label>
-            <input type="tel" name="phone">
+            <input type="tel" name="phone" required>
         </div>
 
         <div>
             <label>Пол:</label>
             <div class="radio-group">
-                <input type="radio" name="gender" value="male"> Мужской
-                <input type="radio" name="gender" value="female"> Женский
+                <input type="radio" name="gender" value="male" required> Мужской
+                <input type="radio" name="gender" value="female" required> Женский
             </div>
         </div>
 
         <div>
             <label>Страна:</label>
-            <select name="country">
+            <select name="country" required>
                 <option value="ru">Россия</option>
                 <option value="en">США</option>
                 <option value="by">Беларусь</option>
