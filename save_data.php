@@ -1,12 +1,12 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Получаем данные из формы
-    $name = $_POST['name'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $gender = $_POST['gender'] ?? '';
-    $country = $_POST['country'] ?? '';
-    $message = $_POST['message'] ?? '';
+    $name = htmlspecialchars($_POST['name'] ?? '');
+    $email = htmlspecialchars($_POST['email'] ?? '');
+    $phone = htmlspecialchars($_POST['phone'] ?? '');
+    $gender = htmlspecialchars($_POST['gender'] ?? '');
+    $country = htmlspecialchars($_POST['country'] ?? '');
+    $message = htmlspecialchars($_POST['message'] ?? '');
     
     // Создаем строку с данными
     $data = "=== Новая запись ===\n";
@@ -19,12 +19,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data .= "Сообщение: " . $message . "\n";
     $data .= "===================\n\n";
     
-    // Сохраняем в файл
+    // Имя файла
     $filename = "form_data.txt";
-    file_put_contents($filename, $data, FILE_APPEND | LOCK_EX);
+    
+    // Пытаемся сохранить в файл
+    $result = file_put_contents($filename, $data, FILE_APPEND | LOCK_EX);
+    
+    if ($result === false) {
+        // Если не удалось записать, пробуем создать файл
+        file_put_contents($filename, "");
+        // Пробуем снова
+        $result = file_put_contents($filename, $data, FILE_APPEND | LOCK_EX);
+    }
     
     // Перенаправляем обратно на страницу
-    header("Location: " . $_SERVER['HTTP_REFERER'] . "?success=1");
+    if ($result !== false) {
+        header("Location: " . $_SERVER['HTTP_REFERER'] . "?success=1");
+    } else {
+        header("Location: " . $_SERVER['HTTP_REFERER'] . "?error=1");
+    }
     exit();
 } else {
     header("Location: index.html");
